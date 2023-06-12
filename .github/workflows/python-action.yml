@@ -1,0 +1,40 @@
+name: Python Action
+on:
+  #push:
+  #  branches: [ main ]
+  schedule:
+   - cron: "30 02 * * *" # 北京时间上午08:30
+  workflow_dispatch:
+#    inputs:
+#      input1:
+#        description: 'A sample input'
+#        required: false
+env:
+  COOKIE: ${{ secrets.COOKIE }}
+  PUSH_COOKIE: ${{ secrets.PUSH_COOKIE }}
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run Python script
+      run: python checkIn.py
