@@ -72,11 +72,13 @@ def send(str):
 
 if __name__ == "__main__":
     num = 1
-    while COOKIE:
+    while True:
         str = start()
         send(str)
         # key = 'COOKIE' + str(num)
         COOKIE_NAME = f'COOKIE{num}'
         COOKIE = os.getenv(COOKIE_NAME)
+        if not COOKIE:
+            break
         num += 1
 exit(0)
