@@ -74,7 +74,7 @@ if __name__ == "__main__":
     while COOKIE is not None:
         str = start()
         send(str)
-        key = 'COOKIE' + str(num)
-        COOKIE = os.getenv(key)
+        # key = 'COOKIE' + str(num)
+        COOKIE = os.getenv(f'COOKIE{num}')
         num += 1
 exit(0)
