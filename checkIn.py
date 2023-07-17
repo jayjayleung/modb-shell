@@ -72,6 +72,7 @@ def send(str):
 
 if __name__ == "__main__":
     num = 1
+    print(os.getenv("COOKIE1"))
     while True:
         str = start()
         send(str)
