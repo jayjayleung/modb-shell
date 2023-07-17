@@ -9,7 +9,7 @@
     | Name | Value | Required |
     | --- | --- | --- |
     | COOKIE | 墨天轮网站Cookie  | 是 |
-    | COOKIE_2 | 多用户, 当需要同时运行多个掘金用户时所需, 支持最多 **5** 名用户(即COOKIE + COOKIE_2 - COOKIE_5)  | 否 |
+    | COOKIE_2 | 多用户, 当需要同时运行多个墨天轮用户时所需, 支持最多 **5** 名用户(即COOKIE + COOKIE_2 - COOKIE_5)  | 否 |
     | PUSHPLUS_TOKEN | [Pushplus](http://www.pushplus.plus/) 官网申请，支持微信消息推送 | 否 |
 
 3. 仓库 -> Actions, 检查Workflows并启用。
