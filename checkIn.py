@@ -75,7 +75,7 @@ if __name__ == "__main__":
     while True:
         str = start()
         send(str)
-        COOKIE_NAME = f'COOKIE{num}'
+        COOKIE_NAME = f'COOKIE_{num}'
         COOKIE = os.getenv(COOKIE_NAME)
         if not COOKIE or num > 5:
             break
