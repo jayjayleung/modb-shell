@@ -11,6 +11,10 @@ on:
 #        required: false
 env:
   COOKIE: ${{ secrets.COOKIE }}
+  COOKIE_2: ${{ secrets.COOKIE_2 }}
+  COOKIE_3: ${{ secrets.COOKIE_3 }}
+  COOKIE_4: ${{ secrets.COOKIE_4 }}
+  COOKIE_5: ${{ secrets.COOKIE_5 }}
   PUSH_COOKIE: ${{ secrets.PUSH_COOKIE }}
 
 
