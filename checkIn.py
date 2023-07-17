@@ -21,7 +21,7 @@ header = {
     "Accept-Encoding": "gzip, deflate,",
     "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
     "Connection": "keep-alive",
-    "Content-Length": 2,
+    "Content-Length": "2",
     "Content-Type": "application/json;charset=UTF-8",
     "Host": "www.modb.pro",
     "Origin": "https://www.modb.pro",
@@ -30,7 +30,7 @@ header = {
     "Sec-Fetch-Mode": "cors",
     "Sec-Fetch-Site": "same-origin",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.82",
-    "sec-ch-ua-platform": "Windows",
+    "sec-ch-ua-platform": "Windows"
 
 }
 
@@ -70,6 +70,10 @@ def send(str):
 
 
 if __name__ == "__main__":
-    str = start()
-    send(str)
+    num = 1
+    while COOKIE is not None:
+        str = start()
+        send(str)
+        COOKIE = os.getenv("COOKIE"+num)
+        num += 1
 exit(0)
