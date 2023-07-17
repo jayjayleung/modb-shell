@@ -7,7 +7,8 @@ import json
 import sys
 import os
 
-COOKIE = os.getenv("COOKIE")
+COOKIE_NAME = 'COOKIE'
+COOKIE = os.getenv(COOKIE_NAME)
 push_Token = os.getenv("PUSH_COOKIE")
 
 # 填写对应参数的值
@@ -54,7 +55,7 @@ def start():
     print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     sign_msg = sign_in()
     time.sleep(10)
-    return "签到返回：" + sign_msg
+    return COOKIE_NAME + "签到返回：" + sign_msg
 
 
 def send(str):
@@ -75,6 +76,7 @@ if __name__ == "__main__":
         str = start()
         send(str)
         # key = 'COOKIE' + str(num)
-        COOKIE = os.getenv(f'COOKIE{num}')
+        COOKIE_NAME = f'COOKIE{num}'
+        COOKIE = os.getenv(COOKIE_NAME)
         num += 1
 exit(0)
