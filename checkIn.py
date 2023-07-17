@@ -71,7 +71,7 @@ def send(str):
 
 if __name__ == "__main__":
     num = 1
-    while COOKIE is not None:
+    while COOKIE:
         str = start()
         send(str)
         # key = 'COOKIE' + str(num)
