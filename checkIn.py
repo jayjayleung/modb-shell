@@ -71,17 +71,13 @@ def send(str):
 
 
 if __name__ == "__main__":
-    num = 1
-    print(os.getenv("COOKIE1"))
+    num = 2
     while True:
         str = start()
         send(str)
         COOKIE_NAME = f'COOKIE{num}'
         COOKIE = os.getenv(COOKIE_NAME)
-        print(COOKIE_NAME)
-        print(COOKIE)
-        if not COOKIE:
-            print("not COOKIE")
+        if not COOKIE or num > 5:
             break
         num += 1
 exit(0)
