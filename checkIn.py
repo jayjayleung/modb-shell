@@ -7,17 +7,17 @@ import json
 import sys
 import os
 
-COOKIE_NAME = 'COOKIE'
-COOKIE = os.getenv(COOKIE_NAME)
+cookie_name = 'COOKIE'
+cookie = os.getenv(cookie_name)
 push_Token = os.getenv("PUSH_COOKIE")
 
 # 填写对应参数的值
 data = {
-    'cookie': COOKIE
+    'cookie': cookie
 }
 
 header = {
-    "cookie": COOKIE,
+    "cookie": cookie,
     "Accept": "application/json, text/plain, */*",
     "Accept-Encoding": "gzip, deflate,",
     "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
@@ -55,7 +55,7 @@ def start():
     print(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     sign_msg = sign_in()
     time.sleep(10)
-    return COOKIE_NAME + "签到返回：" + sign_msg
+    return cookie_name + "签到返回：" + sign_msg
 
 
 def send(str):
@@ -75,9 +75,11 @@ if __name__ == "__main__":
     while True:
         str = start()
         send(str)
-        COOKIE_NAME = f'COOKIE_{num}'
-        COOKIE = os.getenv(COOKIE_NAME)
-        if not COOKIE or num > 5:
+        cookie_name = f'COOKIE_{num}'
+        cookie = os.getenv(cookie_name)
+        if not cookie or num > 5:
             break
+        header.cookie = cookie
+        data.cookie = cookie
         num += 1
 exit(0)
