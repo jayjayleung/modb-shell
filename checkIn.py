@@ -79,7 +79,7 @@ if __name__ == "__main__":
         cookie = os.getenv(cookie_name)
         if not cookie or num > 5:
             break
-        header.cookie = cookie
-        data.cookie = cookie
+        header['cookie'] = cookie
+        data['cookie'] = cookie
         num += 1
 exit(0)
